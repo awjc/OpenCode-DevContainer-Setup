@@ -8,6 +8,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama Remote",
       "options": {
+        // If you are using Ollama remote, replace this with the host that is
+        // serving your Ollama models
         "baseURL": "http://YOUR_OLLAMA_HOST:11434/v1"
       },
       "models": {
@@ -17,5 +19,6 @@
       }
     }
   },
+  // This is the default model that opencode will start with if not specified
   "model": "ollama/gemma4:26b"
 }
