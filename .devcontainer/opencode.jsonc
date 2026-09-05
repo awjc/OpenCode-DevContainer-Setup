@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "@mohak34/opencode-notifier@latest"
+  ],
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama Remote",
+      "options": {
+        "baseURL": "http://YOUR_OLLAMA_HOST:11434/v1"
+      },
+      "models": {
+        "gemma4:26b": {
+          "name": "gemma4:26b"
+        }
+      }
+    }
+  },
+  "model": "ollama/gemma4:26b"
+}
