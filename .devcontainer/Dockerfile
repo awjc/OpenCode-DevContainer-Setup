@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   less \
   git \
   sudo \
-  unzip \
-  jq \
-  vim
+  vim \
+  # Attempting to get the notifier to work, still not passing through from container
+  libnotify-bin
 
 # Set up the dev container user
 ARG USERNAME
@@ -76,5 +76,7 @@ RUN mkdir -p "/home/${USERNAME}/.config/opencode" && \
 RUN chown -R "${USERNAME}:${USERNAME}" \
   "/home/${USERNAME}/.config/opencode"
 
-# Install TPS counter plugin
+# Install TPS counter plugin & notifier plugin
 RUN opencode plugin oc-tps@latest --global
+# (The notifier may not work from inside of docker)
+RUN opencode plugin @mohak34/opencode-notifier@latest --global
